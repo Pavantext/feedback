@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body-container {
+    background-color: #faf4e9;
+    display: flex;
+    flex-direction: column; /* Stack containers vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0; /* Important: Remove default body margins */
+}
+.container {
+    background-color: white;
+    
+    text-align: center;
+}
+
+.div-container {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px; /* Add some padding to the div container */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+.top-logo-container,
+.bottom-logo-container {
+    display: flex;
+    justify-content: center; /* Center the logos */
+    width: 100%; /* Ensure containers span full width */
+}
+
+.top-logo,
+.bottom-logo {
+    width: 100px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Prevent extra space below image */
+}
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: black; /* Changed to black for visibility on white background */
+    margin: 5px 0; /* Added margins for spacing */
+}
+nav {
+    height: 300px;
+    background-image: url(./image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    opacity: 0.8;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    padding-top: 70px;
+}
+img {
+    width: 50px;
+    height: 50px;
+}
+/* p {
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+} */
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.location {
+    font-size: 15px;
+    color: white;
+    text-align: center;
+}
+.menu {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 15px;
+}
+p {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+}
+h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+.stars {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+}
+.stars input {
+    display: none;
+}
+
+.stars label {
+    font-size: 3rem;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.stars input:checked ~ label,
+.stars input:checked ~ label ~ label {
+    color: #dda035;
+    text-shadow: 0 0 15px rgba(221, 160, 53, 0.5);
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #f39c12;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(243, 156, 18, 0.5);
+}
+.stars-display {
+    color: #f39c12;
+    font-size: 0.9em;
+    letter-spacing: -2px;
+}
+textarea {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #dda035;
+    border-radius: 8px;
+    padding: 10px;
+    color: #ffffff;
+    margin: 10px 0;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.options-container {
+    padding: 20px;
+    color: white;
+}
+
+.options-container h2 {
+    margin-bottom: 20px;
+    font-weight: normal;
+}
+
+.options-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.options-group input[type="checkbox"] {
+    display: none;
+}
+
+.options-group label {
+    background-color: #5c9ac9;
+    padding: 8px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+/* Special styling for the "ipsum" option */
+label[for="ipsum"] {
+    background-color: #e8ff8f;
+    color: black;
+}
+
+.options-group input[type="checkbox"]:checked + label {
+    background-color: #e8ff8f;
+    color: black;
+}
+
+.select-btn {
+    background-color: transparent;
+    border: 1px solid #ffffff40;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.selected-text {
+    color: white;
+    font-size: 14px;
+}
+h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    padding: 20px;
+    padding-bottom: 0px;
+}
+button[type="submit"] {
+    background-color: black;
+    color: #ffffff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+.logo {
+    width: 50px;
+    height: 50px;
+}

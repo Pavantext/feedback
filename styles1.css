@@ -1,0 +1,66 @@
+.body-container {
+    background-color: #faf7f2;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-container {
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    padding: 40px 20px;
+}
+
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+/* Top logo styling */
+.logo:first-of-type {
+    margin-bottom: 30px;
+}
+
+/* Bottom logo styling - appears to be in a circular frame */
+.logo:last-of-type {
+    background: #FDB813;
+    border-radius: 50%;
+    padding: 15px;
+    width: 120px;
+    margin-top: 30px;
+}
+
+h3 {
+    color: #000;
+    font-size: 32px;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Name styling */
+h3::after {
+    content: "PAVAN";
+    display: block;
+    color: #993300;
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+p {
+    color: #333;
+    font-size: 18px;
+    margin: 8px 0;
+}
+
+/* Last line styling */
+p:last-of-type {
+    margin-top: 20px;
+    font-style: italic;
+    color: #000;
+}
