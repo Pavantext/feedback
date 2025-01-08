@@ -49,7 +49,7 @@ p {
     margin: 5px 0; /* Added margins for spacing */
 }
 nav {
-    height: 340px;
+    height: 300px;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(./image.jpg);
     background-size: cover;
     background-position: center;
@@ -89,7 +89,8 @@ img {
     background-color: white;
     padding: 20px;
     border-radius: 20px;
-    margin: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 p {
     font-size: 15px;
