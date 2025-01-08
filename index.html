@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+   <section class="section" style="background-color: #F6F4EC;">
+    <main style="background-color: #E7E4D1; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px;">
+        <header class="header">
+            <div class="container" style="gap: 60px;">
+                <img src="./logo1.svg" alt="logo1" />
+                <div class="header-text">
+                    <h1>Statue of Equality</h1>
+                    <p>Hyderabad</p>
+                </div>
+                <img src="./logo2.svg" alt="logo2" />
+            </div>
+    
+            <div class="container flex-col header-box margin-80">
+                <p>Thank you <span style="color: #8a2a14;">Pavan</span>,<br />for visiting the Statue of Equality</p>
+                <p>Help us improve our quality of service by sharing your feedback.</p>
+            </div>
+        </header>
+        <div class="container flex  flex-col">
+            <h1 class="main-heading">How was your overall experience?</h1>
+            <div class="star-rating">
+                <div class="star" data-rating="5">
+                    <img src="./StarOut.svg" alt="star">
+                    <p>EXCELLENT</p>
+                </div>
+                <div class="star" data-rating="4">
+                    <img src="./StarOut.svg" alt="star">
+                    <p>VERY GOOD</p>
+                </div>
+                <div class="star" data-rating="3">
+                    <img src="./StarOut.svg" alt="star">
+                    <p>GOOD</p>
+                </div>
+                <div class="star" data-rating="2">
+                    <img src="./StarOut.svg" alt="star">
+                    <p>FAIR</p>
+                </div>
+                <div class="star" data-rating="1">
+                    <img src="./StarOut.svg" alt="star">
+                    <p>POOR</p>
+                </div>
+            </div>
+
+            <h1 class="main-heading">What did you like most?</h1>
+
+            <div class="options-container">
+                <div class="options-group">
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="dancing_water" name="dancing_water">
+                        <label for="dancing_water">Dancing Water Show</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="Ambience" name="Ambience">
+                        <label for="Ambience">Ambience</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="Architecture" name="Architecture">
+                        <label for="Architecture">Architecture</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="108_Divya_Desams" name="108_Divya_Desams">
+                        <label for="108_Divya_Desams">108 Divya Desams</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="child_play" name="child_play">
+                        <label for="child_play">Children Play Area</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="Shopping" name="Shopping">
+                        <label for="Shopping">Shopping Area</label>
+                    </div>
+                    <div class="badge-checkbox">
+                        <input type="checkbox" id="Events" name="Events">
+                        <label for="Events">Events Organised</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="rating-section">
+        <h1 class="main-heading">Rate our facilities</h1>
+        <div id="rating-container">
+            <!-- Rating rows will be generated here -->
+        </div>
+    </section>
+   </section> 
+
+   <script>
+        const stars = document.querySelectorAll('.star');
+        
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const rating = parseInt(star.dataset.rating);
+                stars.forEach(s => {
+                    const starRating = parseInt(s.dataset.rating);
+                    if (starRating > rating) {
+                        s.querySelector('img').src = './StarOut.svg';
+                    } else {
+                        s.querySelector('img').src = './StarFill.svg';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', () => {
+                stars.forEach(s => {
+                    s.querySelector('img').src = './StarOut.svg';
+                });
+            });
+        });
+    </script>
+    <script src="./rating.js"></script>
+</body>
+</html>

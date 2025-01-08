@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.header {
+    background-image: url(./homeImg.svg);
+    opacity: 0.9;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    color: white;
+    padding: 0 20px;
+    max-width: 1300px;
+    margin: auto;
+    width: 100%;
+}
+.container img{
+    width: 70px;
+    height: 70px;
+}
+
+.header-text {
+    text-align: center;
+}
+
+.header-text h1 {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.header-text p {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+.margin-80{
+    margin-top: 80px;
+}
+.header-box{
+    background-color: white;
+    border: none;
+    border-radius: 12px;
+    color: black;
+    padding: 60px 40px;
+    text-align: center;
+    
+
+}
+
+.header-box>p{
+    width: 60%;
+}
+
+.header-box>p:nth-child(1){
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.header-box>p:nth-child(2){
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.main-heading{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    color: #000000;
+}
+.star>p{
+    text-align: center;
+    color: #C27C0D;
+    font-weight: 500;
+}
+
+.star-rating{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.star {
+    position: relative;
+    cursor: pointer;
+}
+
+.star img {
+    transition: filter 0.3s ease;
+}
+
+.star p {
+    transition: color 0.3s ease;
+}
+
+/* Glowing effect and color change only for hovered star */
+.star:hover img {
+    filter: drop-shadow(0 0 4px #ffd700);
+}
+
+.star:hover p {
+    color: #8a2a14;  /* Red color only for hovered star's text */
+}
+
+/* Fill previous stars - only affects images */
+.star:hover ~ .star img {
+    content: url('./StarFill.svg');
+}
+
+.options-container {
+    width: 100%;
+    padding: 20px;
+}
+
+.options-group {
+    display: grid;
+    grid-template-columns: repeat(6, min-content);
+    gap: 7px;
+    width: 100%;
+    justify-content: center;
+}
+
+.badge-checkbox {
+    position: relative;
+    width: fit-content;
+    min-width: 0;
+}
+
+.badge-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.badge-checkbox label {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #C27C0D;
+    color: black;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+/* Added hover effect with glow */
+.badge-checkbox label:hover {
+    box-shadow: 0 0 8px #ffd700;
+    border-color: #ffd700;
+}
+
+.badge-checkbox input[type="checkbox"]:checked + label {
+    background-color: #8a2a14;
+    color: white;
+    border-color: #8a2a14;
+    box-shadow: 0 0 8px #8a2a14;
+}
+
+/* First row: 3 items */
+.badge-checkbox:nth-child(-n+3) {
+    grid-column: span 2;
+    justify-self: start;
+}
+
+/* Second row: 2 items */
+.badge-checkbox:nth-child(4) {
+    grid-column: span 3;
+    justify-self: end;
+}
+.badge-checkbox:nth-child(5) {
+    grid-column: span 3;
+    justify-self: start;
+}
+
+/* Third row: 2 items */
+.badge-checkbox:nth-child(6) {
+    grid-column: span 3;
+    justify-self: end;
+}
+.badge-checkbox:nth-child(7) {
+    grid-column: span 3;
+    justify-self: center;
+}
+
+/* Tablet adjustments */
+@media screen and (max-width: 768px) {
+    .options-group {
+        gap: 7px;
+    }
+
+    .header {
+        min-height: 250px;
+    }
+
+    .container {
+        gap: 25px;
+    }
+
+    .container img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .star img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-text p {
+        font-size: 1rem;
+    }
+
+    .header-box > p:nth-child(1) {
+        font-size: 1rem;
+    }
+
+    .header-box > p:nth-child(2) {
+        font-size: 0.9rem;
+    }
+
+    .main-heading {
+        font-size: 1.3rem;
+    }
+
+    .star p {
+        font-size: 0.8rem;
+    }
+
+    .badge-checkbox label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+    .options-group {
+        gap: 7px;
+    }
+
+    .header {
+        min-height: 200px;
+    }
+
+    .container {
+        gap: 20px;
+    }
+
+    .container img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .header-box {
+        padding: 40px 20px;
+    }
+
+    .star img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-text p {
+        font-size: 0.9rem;
+    }
+
+    .header-box > p:nth-child(1) {
+        font-size: 0.9rem;
+    }
+
+    .header-box > p:nth-child(2) {
+        font-size: 0.8rem;
+    }
+
+    .main-heading {
+        font-size: 1.2rem;
+    }
+
+    .star p {
+        font-size: 0.75rem;
+    }
+
+    .badge-checkbox label {
+        font-size: 0.75rem;
+    }
+}
+
+/* Small Mobile View */
+@media screen and (max-width: 350px) {
+    .header {
+        min-height: 180px;
+    }
+
+    .container {
+        gap: 15px;
+        padding: 0 10px;
+    }
+
+    .container img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .header-box {
+        padding: 30px 15px;
+    }
+
+    .star img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .header-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .header-text p {
+        font-size: 0.8rem;
+    }
+
+    .header-box > p:nth-child(1) {
+        font-size: 0.8rem;
+    }
+
+    .header-box > p:nth-child(2) {
+        font-size: 0.7rem;
+    }
+
+    .main-heading {
+        font-size: 1rem;
+    }
+
+    .star p {
+        font-size: 0.7rem;
+    }
+
+    .badge-checkbox label {
+        font-size: 0.7rem;
+    }
+}
+
+/* Very Small Mobile View */
+@media screen and (max-width: 250px) {
+    .header {
+        min-height: 150px;
+    }
+
+    .container {
+        gap: 10px;
+        padding: 0 5px;
+    }
+
+    .container img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .header-box {
+        padding: 20px 10px;
+    }
+
+    .star img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .header-text h1 {
+        font-size: 1rem;
+    }
+
+    .header-text p {
+        font-size: 0.7rem;
+    }
+
+    .header-box > p:nth-child(1) {
+        font-size: 0.7rem;
+    }
+
+    .header-box > p:nth-child(2) {
+        font-size: 0.6rem;
+    }
+
+    .main-heading {
+        font-size: 0.9rem;
+    }
+
+    .star p {
+        font-size: 0.65rem;
+    }
+
+    .badge-checkbox label {
+        font-size: 0.65rem;
+        padding: 6px 12px;  /* Adjusted padding for smaller screens */
+    }
+}
+
+/* Add this to your existing CSS */
+.rating-section {
+    padding: 20px;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.rating-row {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating-row h2 {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 15px;
+    font-weight: 500;
+    align-self: flex-start;
+    margin-left: calc(50% - 250px);
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 500px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .rating-row h2 {
+        margin-left: calc(50% - 200px);
+    }
+    
+    .star-rating {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rating-row h2 {
+        margin-left: calc(50% - 150px);
+    }
+    
+    .star-rating {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .rating-row h2 {
+        margin-left: calc(50% - 125px);
+    }
+    
+    .star-rating {
+        width: 250px;
+    }
+}
+
+@media screen and (max-width: 250px) {
+    .rating-row h2 {
+        margin-left: calc(50% - 100px);
+    }
+    
+    .star-rating {
+        width: 200px;
+    }
+}
