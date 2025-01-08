@@ -29,27 +29,61 @@ function initializeRatings() {
     const container = document.getElementById('rating-container');
     container.innerHTML = facilities.map(createRatingRow).join('');
 
-    // Add hover effect for each star-rating group
+    // Add hover and click effect for each star-rating group
     document.querySelectorAll('.rating-row .star-rating').forEach(starRating => {
         const stars = starRating.querySelectorAll('.star');
+        let selectedRating = 0;  // Track selected rating for each group
         
         stars.forEach(star => {
             star.addEventListener('mouseover', () => {
-                const rating = parseInt(star.dataset.rating);
-                stars.forEach(s => {
-                    const starRating = parseInt(s.dataset.rating);
-                    if (starRating > rating) {
-                        s.querySelector('img').src = './StarOut.svg';
-                    } else {
-                        s.querySelector('img').src = './StarFill.svg';
-                    }
-                });
+                if (!selectedRating) {  // Only show hover effect if no rating is selected
+                    const rating = parseInt(star.dataset.rating);
+                    stars.forEach(s => {
+                        const starRating = parseInt(s.dataset.rating);
+                        if (starRating > rating) {
+                            s.querySelector('img').src = './StarOut.svg';
+                        } else {
+                            s.querySelector('img').src = './StarFill.svg';
+                        }
+                    });
+                }
             });
             
             star.addEventListener('mouseout', () => {
-                stars.forEach(s => {
-                    s.querySelector('img').src = './StarOut.svg';
-                });
+                if (!selectedRating) {  // Only clear stars if no rating is selected
+                    stars.forEach(s => {
+                        s.querySelector('img').src = './StarOut.svg';
+                    });
+                } else {  // Maintain selected stars
+                    stars.forEach(s => {
+                        const starRating = parseInt(s.dataset.rating);
+                        if (starRating > selectedRating) {
+                            s.querySelector('img').src = './StarOut.svg';
+                        } else {
+                            s.querySelector('img').src = './StarFill.svg';
+                        }
+                    });
+                }
+            });
+
+            star.addEventListener('click', () => {
+                const rating = parseInt(star.dataset.rating);
+                if (selectedRating === rating) {  // Clicking the same star again clears the selection
+                    selectedRating = 0;
+                    stars.forEach(s => {
+                        s.querySelector('img').src = './StarOut.svg';
+                    });
+                } else {  // Set new rating
+                    selectedRating = rating;
+                    stars.forEach(s => {
+                        const starRating = parseInt(s.dataset.rating);
+                        if (starRating > rating) {
+                            s.querySelector('img').src = './StarOut.svg';
+                        } else {
+                            s.querySelector('img').src = './StarFill.svg';
+                        }
+                    });
+                }
             });
         });
     });
