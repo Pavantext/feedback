@@ -43,6 +43,7 @@
 
 .header-text {
     text-align: center;
+    margin-top: 40px;
 }
 
 .header-text h1 {
@@ -268,6 +269,10 @@
     .badge-checkbox label {
         font-size: 0.8rem;
     }
+
+    .header-text {
+        margin-top: 30px;
+    }
 }
 
 /* Mobile adjustments */
@@ -282,6 +287,7 @@
 
     .container {
         gap: 20px;
+        width: 95%;
     }
 
     .container img {
@@ -290,7 +296,8 @@
     }
 
     .header-box {
-        padding: 40px 20px;
+        padding: 25px 0;
+
     }
 
     .star img {
@@ -299,15 +306,15 @@
     }
 
     .header-text h1 {
-        font-size: 1.5rem;
+        font-size: 0.8rem;
     }
 
     .header-text p {
-        font-size: 0.9rem;
+        font-size: 0.7rem;
     }
 
     .header-box > p:nth-child(1) {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .header-box > p:nth-child(2) {
@@ -324,6 +331,10 @@
 
     .badge-checkbox label {
         font-size: 0.75rem;
+    }
+
+    .header-text {
+        margin-top: 25px;
     }
 }
 
@@ -379,6 +390,10 @@
     .badge-checkbox label {
         font-size: 0.7rem;
     }
+
+    .header-text {
+        margin-top: 20px;
+    }
 }
 
 /* Very Small Mobile View */
@@ -433,6 +448,10 @@
     .badge-checkbox label {
         font-size: 0.65rem;
         padding: 6px 12px;  /* Adjusted padding for smaller screens */
+    }
+
+    .header-text {
+        margin-top: 15px;
     }
 }
 
