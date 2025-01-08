@@ -10,17 +10,14 @@ const facilities = [
     "Overall experience"
 ];
 
-const ratings = ["POOR", "FAIR", "GOOD", "VERY GOOD", "EXCELLENT"];
-
 function createRatingRow(facility) {
     return `
         <div class="rating-row">
             <h2>${facility}</h2>
             <div class="star-rating">
-                ${ratings.map((rating, index) => `
+                ${Array(5).fill().map((_, index) => `
                     <div class="star" data-rating="${5 - index}">
                         <img src="./StarOut.svg" alt="star">
-                        <p>${rating}</p>
                     </div>
                 `).join('')}
             </div>
@@ -32,29 +29,27 @@ function initializeRatings() {
     const container = document.getElementById('rating-container');
     container.innerHTML = facilities.map(createRatingRow).join('');
 
-    // Add event listeners to all stars
-    const stars = document.querySelectorAll('.star');
-    stars.forEach(star => {
-        star.addEventListener('mouseover', () => {
-            const rating = parseInt(star.dataset.rating);
-            const starRating = star.closest('.star-rating');
-            const starsInThisRow = starRating.querySelectorAll('.star');
-            
-            starsInThisRow.forEach(s => {
-                const starRating = parseInt(s.dataset.rating);
-                if (starRating > rating) {
-                    s.querySelector('img').src = './StarOut.svg';
-                } else {
-                    s.querySelector('img').src = './StarFill.svg';
-                }
-            });
-        });
+    // Add hover effect for each star-rating group
+    document.querySelectorAll('.rating-row .star-rating').forEach(starRating => {
+        const stars = starRating.querySelectorAll('.star');
         
-        star.addEventListener('mouseout', () => {
-            const starRating = star.closest('.star-rating');
-            const starsInThisRow = starRating.querySelectorAll('.star');
-            starsInThisRow.forEach(s => {
-                s.querySelector('img').src = './StarOut.svg';
+        stars.forEach(star => {
+            star.addEventListener('mouseover', () => {
+                const rating = parseInt(star.dataset.rating);
+                stars.forEach(s => {
+                    const starRating = parseInt(s.dataset.rating);
+                    if (starRating > rating) {
+                        s.querySelector('img').src = './StarOut.svg';
+                    } else {
+                        s.querySelector('img').src = './StarFill.svg';
+                    }
+                });
+            });
+            
+            star.addEventListener('mouseout', () => {
+                stars.forEach(s => {
+                    s.querySelector('img').src = './StarOut.svg';
+                });
             });
         });
     });
