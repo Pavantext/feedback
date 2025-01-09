@@ -139,7 +139,7 @@
 
 /* Fill previous stars - only affects images */
 .star:hover ~ .star img {
-    content: url('./StarFill.svg');
+    content: url('../assets/StarFill.svg');
 }
 
 .options-container {
