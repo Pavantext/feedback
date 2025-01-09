@@ -17,7 +17,7 @@ function createRatingRow(facility) {
             <div class="star-rating">
                 ${Array(5).fill().map((_, index) => `
                     <div class="star" data-rating="${5 - index}">
-                        <img src="./StarOut.svg" alt="star">
+                        <img src="../assets/StarOut.svg" alt="star">
                     </div>
                 `).join('')}
             </div>
@@ -41,9 +41,9 @@ function initializeRatings() {
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > rating) {
-                            s.querySelector('img').src = './StarOut.svg';
+                            s.querySelector('img').src = '../assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = './StarFill.svg';
+                            s.querySelector('img').src = '../assets/StarFill.svg';
                         }
                     });
                 }
@@ -52,15 +52,15 @@ function initializeRatings() {
             star.addEventListener('mouseout', () => {
                 if (!selectedRating) {  // Only clear stars if no rating is selected
                     stars.forEach(s => {
-                        s.querySelector('img').src = './StarOut.svg';
+                        s.querySelector('img').src = '../assets/StarOut.svg';
                     });
                 } else {  // Maintain selected stars
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > selectedRating) {
-                            s.querySelector('img').src = './StarOut.svg';
+                            s.querySelector('img').src = '../assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = './StarFill.svg';
+                            s.querySelector('img').src = '../assets/StarFill.svg';
                         }
                     });
                 }
@@ -71,16 +71,16 @@ function initializeRatings() {
                 if (selectedRating === rating) {  // Clicking the same star again clears the selection
                     selectedRating = 0;
                     stars.forEach(s => {
-                        s.querySelector('img').src = './StarOut.svg';
+                        s.querySelector('img').src = '../assets/StarOut.svg';
                     });
                 } else {  // Set new rating
                     selectedRating = rating;
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > rating) {
-                            s.querySelector('img').src = './StarOut.svg';
+                            s.querySelector('img').src = '../assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = './StarFill.svg';
+                            s.querySelector('img').src = '../assets/StarFill.svg';
                         }
                     });
                 }
