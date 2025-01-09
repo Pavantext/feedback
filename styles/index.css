@@ -403,7 +403,7 @@ h1 {
     }
 
     .badge-checkbox label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .header-text {
@@ -582,43 +582,156 @@ textarea.comment {
     transform: scale(1.5);
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #F4F1E2;
-}
-.thank-you-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+body {
     background-color: #F4F1E2;
 }
 
-.thank-you-container{
+.index-body{
+    
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+a{
+    text-decoration: none;
+}
+.thank-you-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    background-color: #F4F1E2;
+}
+
+.thank-you-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     background-color: white;
     width: 100%;
-    padding: 50px 0;
+    padding: 50px 20px;
+    border-radius: 12px;
+    position: relative;
 }
 
-.logo{
-    width: 80px;
-    height: 80px;
+.logo {
+    width: 60px;
+    height: 60px;
 }
-.logo1-pos{
+
+.logo1-pos {
     position: absolute;
-    top: 18%;
+    top: -30px;
 }
-.logo2-pos{
+
+.logo2-pos {
     position: absolute;
-    top: 65%;
+    bottom: -30px;
 }
-.thank-you-container>p{
-    font-weight: bold;
+
+.thank-you-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.thank-you-container p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Add these styles for the form elements */
+textarea.comment {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Inter", serif;
+    resize: vertical;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#contact {
+    width: 20px;
+    height: 20px;
+    accent-color: black;
+}
+
+/* Update button styles */
+button[type="submit"] {
+    background-color: black;
+    color: #ffffff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 20px auto;
+    display: block;
+    min-width: 200px;
+    max-width: 300px;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Add responsive styles */
+@media screen and (max-width: 768px) {
+    .thank-you-container {
+        width: 100%;
+        padding: 40px 15px;
+    }
+
+    .thank-you-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .thank-you-container p {
+        font-size: 1rem;
+    }
+
+    textarea.comment {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .thank-you-container {
+        width: 100%;
+        padding: 30px 15px;
+    }
+
+    .thank-you-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .thank-you-container p {
+        font-size: 0.9rem;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    textarea.comment {
+        width: 90%;
+    }
 }

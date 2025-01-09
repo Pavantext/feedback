@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="./styles/index.css">
     <title>Feedback Form</title>
 </head>
-<body>
+<body class="index-body">
    <section class="section" style="background-color: #F6F4EC;">
     <main style="background-color: #E7E4D1; border-bottom-left-radius: 24px; border-bottom-right-radius: 24px;">
         <header class="header">
-            <div class="container" style="gap: 60px;">
+            <div class="container">
                 <img src="./assets/logo1.svg" alt="logo1" />
                 <div class="header-text">
                     <h1>Statue of Equality</h1>
@@ -107,9 +107,9 @@
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > rating) {
-                            s.querySelector('img').src = '../assets/StarOut.svg';
+                            s.querySelector('img').src = './assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = '../assets/StarFill.svg';
+                            s.querySelector('img').src = './assets/StarFill.svg';
                         }
                     });
                 }
@@ -118,15 +118,15 @@
             star.addEventListener('mouseout', () => {
                 if (!selectedRating) {  // Only clear stars if no rating is selected
                     stars.forEach(s => {
-                        s.querySelector('img').src = '../assets/StarOut.svg';
+                        s.querySelector('img').src = './assets/StarOut.svg';
                     });
                 } else {  // Maintain selected stars
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > selectedRating) {
-                            s.querySelector('img').src = '../assets/StarOut.svg';
+                            s.querySelector('img').src = './assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = '../assets/StarFill.svg';
+                            s.querySelector('img').src = './assets/StarFill.svg';
                         }
                     });
                 }
@@ -137,16 +137,16 @@
                 if (selectedRating === rating) {  // Clicking the same star again clears the selection
                     selectedRating = 0;
                     stars.forEach(s => {
-                        s.querySelector('img').src = '../assets/StarOut.svg';
+                        s.querySelector('img').src = './assets/StarOut.svg';
                     });
                 } else {  // Set new rating
                     selectedRating = rating;
                     stars.forEach(s => {
                         const starRating = parseInt(s.dataset.rating);
                         if (starRating > rating) {
-                            s.querySelector('img').src = '../assets/StarOut.svg';
+                            s.querySelector('img').src = './assets/StarOut.svg';
                         } else {
-                            s.querySelector('img').src = '../assets/StarFill.svg';
+                            s.querySelector('img').src = './assets/StarFill.svg';
                         }
                     });
                 }
