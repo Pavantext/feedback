@@ -581,3 +581,29 @@ textarea.comment {
     accent-color: black;
     transform: scale(1.5);
 }
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #F4F1E2;
+}
+.thank-you-body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F4F1E2;
+}
+
+.thank-you-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    width: 100%;
+    padding: 50px 0;
+}
+
