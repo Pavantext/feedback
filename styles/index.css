@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Euclid Circular A;
+    font-family: "Inter", serif;
 }
 
 h1 {
@@ -607,3 +607,18 @@ body{
     padding: 50px 0;
 }
 
+.logo{
+    width: 80px;
+    height: 80px;
+}
+.logo1-pos{
+    position: absolute;
+    top: 18%;
+}
+.logo2-pos{
+    position: absolute;
+    top: 65%;
+}
+.thank-you-container>p{
+    font-weight: bold;
+}
