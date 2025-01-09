@@ -7,6 +7,12 @@
     font-family: Euclid Circular A;
 }
 
+h1 {
+    white-space: nowrap; /* Prevents the text from wrapping onto multiple lines */
+    overflow: hidden; /* Hides any text that overflows the container */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) at the end of the text if it overflows */
+  }
+
 .header {
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url(../assets/homeImg.svg);
     opacity: 0.9;
@@ -46,6 +52,10 @@
     margin-top: 40px;
 }
 
+.header-text {
+    width: 100%; /* Makes the container take up the full width of its parent */
+  }
+
 .header-text h1 {
     font-size: 2rem;
     font-weight: 500;
@@ -73,7 +83,7 @@
     border: none;
     border-radius: 12px;
     color: black;
-    padding: 60px 40px;
+    padding: 15px 0px;
     text-align: center;
     
 
@@ -298,7 +308,7 @@
     }
 
     .header-box {
-        padding: 25px 0;
+        padding: 15px 0;
 
     }
 
@@ -308,7 +318,7 @@
     }
 
     .header-text h1 {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
     }
 
     .header-text p {
@@ -357,7 +367,7 @@
     }
 
     .header-box {
-        padding: 30px 15px;
+        padding: 15px 0px;
     }
 
     .star img {
@@ -566,5 +576,4 @@ textarea.comment {
     height: 30px;
     accent-color: black;
     transform: scale(1.5);
-    filter: invert(100%);
 }
